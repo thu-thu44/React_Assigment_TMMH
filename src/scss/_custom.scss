@@ -348,7 +348,7 @@ $input-bottom-border: darken(#e3e5f1, 15);
 }
 
 .form-btn {
-  background-image: linear-gradient(to bottom, #19A7CE,#F6F1F1);
+  background-image: linear-gradient(to bottom, #943e14,#e9814d);
   color: black;
   // border-color: #E7E5E5;
   border: none;
@@ -652,9 +652,11 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 /************* END DATEPICKER *************/
 .login{
 padding: 0 30px;
+margin-left: 2rem;
+margin-right: 2rem;
 border-radius: 15px;
 background-image: linear-gradient(to right, #146C94,#AFD3E2);
-border: 1px solid #39372e;
+border: 1px solid #AFD3E2;
 box-shadow: 0px 0px 8px rgba(166, 167, 155, 0.6);
 }
 .login-bg{
@@ -664,20 +666,55 @@ box-shadow: 0px 0px 8px rgba(166, 167, 155, 0.6);
   background-color: linear-gradient(ro right,#AFD3E2,#f6f1f1);
   background-size: cover;
 }
+
+.login-bg-ph{
+  background-image: url(/image/tmmh_bg_ph.png);
+  width: 100%;
+  height: auto;
+  background-color: linear-gradient(ro right,#AFD3E2,#f6f1f1);
+  background-size: cover;
+}
+
 .login-title{
   margin-top: 15px ;
   font-size: 2.5rem;
   color: #F6F1F1;
   font-weight: bold;
 }
+
+.login-title-ph{
+  margin-top: 15px ;
+  font-size: 1rem;
+  color: #F6F1F1;
+  font-weight: bold;
+}
+
+
 .form-label{
   display: contents;
   color: #F6F1F1;
   font-size: 25px;
 }
+
+.form-label-ph{
+  margin-bottom: 10px;
+  display: contents;
+  color: #F6F1F1;
+  font-size: 15px;
+}
+
+
 .login-input{
   height: 40px;
 }
+
+.login-input-ph{
+  margin-top: 1rem;
+  height: 40px;
+}
+
+
+
 .login-btn{
   width: auto !important;
   margin-right: 1rem;

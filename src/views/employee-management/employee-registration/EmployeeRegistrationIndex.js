@@ -238,7 +238,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>UserName</p>
+                      <p className='mt-2'>UserName<span style={{color:"red"}}>*</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CInput type="text" value={userName} onChange={userNameChange} />
@@ -249,7 +249,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>Gender</p>
+                      <p className='mt-2'>Gender<span style={{color:"red"}}>*</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CSelect
@@ -277,7 +277,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>English Skill</p>
+                      <p className='mt-2'>English Skill<span style={{color:"red"}}>*</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CSelect
@@ -309,7 +309,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>Email</p>
+                      <p className='mt-2'>Email<span style={{color:"red"}}>*</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CInput type="text" value={email} onChange={emailChange} />
@@ -320,7 +320,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>Date of Birth</p>
+                      <p className='mt-2'>Date of Birth<span style={{color:"red"}}>*</span></p>
                     </CCol>
                     <CCol lg="7">
                       <DatePicker value={fromDate} change={fromDateChange} />
@@ -331,7 +331,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow style={{ marginTop: "1px" }}>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>Japanese Skill</p>
+                      <p className='mt-2'>Japanese Skill<span style={{color:"red"}}>*</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CSelect
