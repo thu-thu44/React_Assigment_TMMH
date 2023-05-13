@@ -3,6 +3,8 @@ import { CCard, CCardBody, CBody, CCol, CRow, CImg, CLabel, CInputGroup, CInputG
 import SuccessError from '../common/SuccessError';
 import $ from "jquery";
 
+
+
 const LoginForm = (props) => {
   let { loginClick, passwordChange, password,
     userCodeChange, usercode, success, error } = props;
@@ -17,6 +19,13 @@ const LoginForm = (props) => {
       });
     }, []);
 
+    // For Pressing Enter and login
+    const keyDownHandler = (e) =>{
+      if(e.key == "Enter"){
+        loginClick();
+        e.preventDefault(); //to avoid blank page from error
+      }
+    }
 
   return (
     <>
@@ -47,7 +56,7 @@ const LoginForm = (props) => {
                         <CImg src="./image/user.png" width={20} height={20}></CImg>
                       </CInputGroupText>
                     </CInputGroupPrepend>
-                    <CInput className="login-input" placeholder='Enter user Code' type='text'
+                    <CInput onKeyDown={keyDownHandler} className="login-input" placeholder='Enter user Code' type='text'
                       autoFocus value={usercode} onChange={userCodeChange}>
                     </CInput>
                   </CInputGroup>
@@ -64,7 +73,7 @@ const LoginForm = (props) => {
                         <CImg src="./image/password.png" width={20} height={20}></CImg>
                       </CInputGroupText>
                     </CInputGroupPrepend>
-                    <CInput className="login-input" placeholder='Enter your password' type="password"
+                    <CInput onKeyDown={keyDownHandler} className="login-input" placeholder='Enter your password' type="password"
                     autoFocus value={password} onChange={passwordChange}>
                     </CInput>
                   </CInputGroup>

@@ -11,11 +11,13 @@ export const ApiRequest = async (value) => {
 
   // Set the AUTH token for any request
   axios.interceptors.request.use((config) => {
+    //do something before request is sent
     const token = localStorage.getItem('TOKEN');
     config.headers.Authorization = token ? `Bearer ${token}` : "";
     config.headers.Accept = "application/json";
     return config;
   });
+    //do something with request error
     // handle error
   axios.interceptors.response.use(
     (response) => response,

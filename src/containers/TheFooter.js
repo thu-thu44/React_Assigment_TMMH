@@ -14,7 +14,7 @@ const TheFooter = () => {
       <div className="mfs-auto">
         <span className="mr-1">Powered by</span>
         {/* ကိုယ့်နာမည်ကိုပြောင်းလို့ရ */}
-        <a style={{color: "blue"}} target="_blank" rel="noopener noreferrer">Kise</a>
+        <a style={{color: "blue"}} target="_blank" rel="noopener noreferrer">Thu Thu</a>
       </div>
     </CFooter>
   )

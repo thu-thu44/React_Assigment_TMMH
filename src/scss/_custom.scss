@@ -3,23 +3,23 @@
     border-radius: unset !important;
 }
 .c-sidebar{
-    background-image: linear-gradient(to right, #161e29, #3c4654) !important;
+    background-image: linear-gradient(to right, #146C94, #19A7ce ) !important;
     text-align: right;
 }
 .c-sidebar-nav > .dashboard a::before {
-    background-image: url(/image/dashboard.svg);
+    background-image: url(/image/dashboard.png);
     margin-right: 0.5rem;
 }
 .c-sidebar-nav > .employee-management a::before {
-  background-image: url(/image/employee-management.svg);
+  background-image: url(/image/employee-management.png);
   margin-right: 0.5rem;
 }
 .c-sidebar-nav > .admin a::before {
-  background-image: url(/image/shop-management.svg);
+  background-image: url(/image/registration.png);
   margin-right: 0.5rem;
 }
 .c-sidebar-nav > .logout a::before {
-  background-image: url(/image/logout.svg);
+  background-image: url(/image/logout.png);
   margin-right: 0.5rem;
 }
 
@@ -36,7 +36,7 @@
     font-family: "Titillium Web", sans-serif;
   }
   .container {
-    color: #333333 !important;
+    color: #146C94 !important;
   }
   
   .c-wrapper {
@@ -118,9 +118,9 @@
   .c-sidebar .c-sidebar-nav-link.c-active {
     border-radius: 0 5rem 5rem 0;
     background: #c4cce3;
-    color: #feec72 !important;
+    color: black !important;
     // bg color from animation
-    background: linear-gradient(to left, #b6ba38, transparent 50%) right;
+    background: linear-gradient(to left, #e9814d, transparent 50%) right;
     background-size: 200%;
     transition: 0.5s ease-out;
   }
@@ -128,10 +128,10 @@
   .c-sidebar .c-sidebar-nav-link:hover,
   .c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
     background: #c4cce3;
-    color: #feec72 !important;
+    color: black !important;
     border-radius: 0 5rem 5rem 0;
     // animation hover
-    background: linear-gradient(to left, #b6ba38 10%, transparent 50%) right;
+    background: linear-gradient(to left, #e49066 10%, transparent 50%) right;
     background-size: 200%;
     transition: 0.5s ease-out;
   }
@@ -785,7 +785,7 @@ html:not([dir="rtl"]) .page-item .page-link {
 }
 .emp-list-table thead{
   color: white;
-  background-color:  rgb(156, 161, 60);
+  background-color:  #146C94;
 }
 .emp-list-table tr th {
   border: 1px solid rgb(37, 36, 36);

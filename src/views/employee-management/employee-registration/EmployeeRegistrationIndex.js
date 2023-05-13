@@ -15,6 +15,9 @@ import Loading from "../../common/Loading";
 import SuccessError from "../../common/SuccessError"; 
 import { ApiRequest } from "../../common/ApiRequest";
 import moment from "moment";
+import {nullChk,validateName,emailChk,numberChk} from "../../common/CommonValidation";
+
+
 const EmployeeRegistrationIndex = () => {
   const history = useHistory();
   const [genderData, setGenderData] = useState([
@@ -151,7 +154,6 @@ const EmployeeRegistrationIndex = () => {
           email: email,
           date_of_birth:fromDate,
          
-
       },
     };
     let response = await ApiRequest(saveData);
@@ -175,50 +177,78 @@ const EmployeeRegistrationIndex = () => {
     setLoading(false);
  }
 
+//  Save Click function with condition check
+ const saveClick = async () =>{
+  let errMsg = []
+  //Condition check for username
+  if(!nullChk(userName)){
+    errMsg.push("Please fill Username");
+  }else if(!validateName(userName)){
+    errMsg.push("Please fill Character Only in Username.");
+  }
 
+  //Condition check for email
+  if(!nullChk(email)){
+    errMsg.push("Please enter email.")
+  }else if(!emailChk(email)){
+    errMsg.push("You have to enter Only Email.")
+  }
 
+  //Condition check for gender
+  if(selectGender == ""){
+    errMsg.push("Please select gender")
+  }
 
+  //Condition check for Eng Skill
+  if(selectEng == ""){
+    errMsg.push("Please select English skill level.")
+  }
 
+  //Condition check for Jap Skill
+  if(selectJapan == ""){
+    errMsg.push("Please select Japanese skill level.")
+  }
 
-
-
-
-  const saveClick = async() => {
-
-     setLoading(true);
-     setUpdateStatus(false);
-     let saveData = {
-     
-       method: "post",
-       url: `employee/save`,
-       params: {
-        name : userName,
-           email : email,
-           japanese_skill : selectJapan,
-           english_skill : selectEng,
-           gender : selectGender,
-           email: email,
-           date_of_birth:fromDate,
-       },
-     };
-     let response = await ApiRequest(saveData);
-     if (response.flag === false) {
-       setError(response.message);
-       setSuccess([]);
-       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-     } else {
-       if (response.data.status == "OK") {
-         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-         setSuccess([response.data.message]);
-         reset();
-         setError([]);
-       } else {
-         setError([response.data.message]);
-         setSuccess([]);
-         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-       }
-     }
-     setLoading(false);
+  if(errMsg.length <= 0){
+    
+    setLoading(true);
+    setUpdateStatus(false);
+    let saveData = {
+    
+      method: "post",
+      url: `employee/save`,
+      params: {
+       name : userName,
+          email : email,
+          japanese_skill : selectJapan,
+          english_skill : selectEng,
+          gender : selectGender,
+          email: email,
+          date_of_birth:fromDate,
+      },
+    };
+    let response = await ApiRequest(saveData);
+    if (response.flag === false) {
+      setError(response.message);
+      setSuccess([]);
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    } else {
+      if (response.data.status == "OK") {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        setSuccess([response.data.message]);
+        reset();
+        setError([]);
+      } else {
+        setError([response.data.message]);
+        setSuccess([]);
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      }
+    }
+    setLoading(false);
+  }else{
+    setError(errMsg)
+  }
+    
   }
 
   return (
@@ -238,7 +268,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>UserName<span style={{color:"red"}}>*</span></p>
+                      <p className='mt-2'>UserName<span style={{color:"red"}}> *</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CInput type="text" value={userName} onChange={userNameChange} />
@@ -249,7 +279,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>Gender<span style={{color:"red"}}>*</span></p>
+                      <p className='mt-2'>Gender<span style={{color:"red"}}> *</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CSelect
@@ -277,7 +307,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>English Skill<span style={{color:"red"}}>*</span></p>
+                      <p className='mt-2'>English Skill<span style={{color:"red"}}> *</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CSelect
@@ -309,7 +339,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>Email<span style={{color:"red"}}>*</span></p>
+                      <p className='mt-2'>Email<span style={{color:"red"}}> *</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CInput type="text" value={email} onChange={emailChange} />
@@ -320,7 +350,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>Date of Birth<span style={{color:"red"}}>*</span></p>
+                      <p className='mt-2'>Date of Birth<span style={{color:"red"}}> *</span></p>
                     </CCol>
                     <CCol lg="7">
                       <DatePicker value={fromDate} change={fromDateChange} />
@@ -331,7 +361,7 @@ const EmployeeRegistrationIndex = () => {
                   <CRow style={{ marginTop: "1px" }}>
                     <CCol lg="1"></CCol>
                     <CCol lg="3">
-                      <p className='mt-2'>Japanese Skill<span style={{color:"red"}}>*</span></p>
+                      <p className='mt-2'>Japanese Skill<span style={{color:"red"}}> *</span></p>
                     </CCol>
                     <CCol lg="7">
                       <CSelect
