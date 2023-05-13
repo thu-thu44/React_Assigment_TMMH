@@ -82,10 +82,10 @@ const TheHeader = () => {
   return (
     <CHeader withSubheader>
        <CHeaderBrand className="mx-auto d-lg-none" to="/">
-        <CIcon name="logo" height="48" alt="Logo" />
-      </CHeaderBrand>
+        <h2>Managment System</h2>
+       </CHeaderBrand>
 
-      <CHeaderNav className="d-md-down-none mr-auto">
+      {/* <CHeaderNav className="d-md-down-none mr-auto">
         <CHeaderNavItem className="px-3">
           <CHeaderNavLink to="/dashboard">Dashboard</CHeaderNavLink>
         </CHeaderNavItem>
@@ -95,14 +95,14 @@ const TheHeader = () => {
         <CHeaderNavItem className="px-3">
           <CHeaderNavLink>Settings</CHeaderNavLink>
         </CHeaderNavItem>
-      </CHeaderNav>
+      </CHeaderNav> */}
 
-      <CHeaderNav className="px-3">
+      {/* <CHeaderNav className="px-3">
         <TheHeaderDropdownNotif />
         <TheHeaderDropdownTasks />
         <TheHeaderDropdownMssg />
         <TheHeaderDropdown />
-      </CHeaderNav> 
+      </CHeaderNav>  */}
 
       <CSubheader className="px-3 ">
         <CToggler
@@ -138,7 +138,7 @@ const TheHeader = () => {
               {date}&nbsp; &nbsp; {realTime}
             </CCol> 
          
-            <CCol
+            {/* <CCol
              style={{
               minWidth: "10rem",
               marginTop: "10px",
@@ -149,12 +149,12 @@ const TheHeader = () => {
               <CLabel>
                 {date} <br></br>{time}
               </CLabel>
-            </CCol>
+            </CCol> */}
             
   
           </CRow>
 
-          <CLink className="c-subheader-nav-link" href="#">
+          {/* <CLink className="c-subheader-nav-link" href="#">
             <CIcon name="cil-speech" alt="Settings" />
           </CLink>
           <CLink
@@ -168,7 +168,7 @@ const TheHeader = () => {
           <CLink className="c-subheader-nav-link" href="#">
             <CIcon name="cil-settings" alt="Settings" />
             &nbsp;Settings
-          </CLink> 
+          </CLink>  */}
         </div>
       </CSubheader>
     </CHeader>

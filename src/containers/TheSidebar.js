@@ -29,7 +29,7 @@ const TheSidebar = () => {
     >
       <CSidebarBrand className="d-md-down-none" to="/">
         <CImg
-          src={"/image/main-logo.png"}
+          src={"/image/logo-icon.png"}
           className="c-avatar-img"
           alt="admin@bootstrapmaster.com"
           style={{width:"101px"}}

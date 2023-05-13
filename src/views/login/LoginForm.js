@@ -4,7 +4,6 @@ import SuccessError from '../common/SuccessError';
 import $ from "jquery";
 
 
-
 const LoginForm = (props) => {
   let { loginClick, passwordChange, password,
     userCodeChange, usercode, success, error } = props;
@@ -86,6 +85,7 @@ const LoginForm = (props) => {
               <CRow alignHorizontal="center" className='mb-4'>
                 <CButton id="login" className='form-btn login-btn' onClick={loginClick}>Login</CButton>
               </CRow>
+              
             </CCardBody>
           </CCard>
         </CCol>
@@ -150,11 +150,13 @@ const LoginForm = (props) => {
                 <CButton id="login" className='form-btn login-btn' onClick={loginClick}>Login</CButton>
               </CRow>
 
-
+          
           </CCardBody>
         </CCard>
       </CCol>
+      
     </CRow>
+
   
   </div>
   )}
