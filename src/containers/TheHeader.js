@@ -115,15 +115,19 @@ const TheHeader = () => {
           className="ml-3 d-md-down-none"
           onClick={toggleSidebar}
         />
-        <CBreadcrumbRouter
-          className="border-0 c-subheader-nav m-0 px-0 px-md-3 "
-          routes={routes}
-        />
+        
         <div className="d-md-down-none mfe-2 c-subheader-nav ">
           <CRow
             className="c-subheader-nav-link"
-            style={{ position: "absolute", right: 0, marginRight: "0px" }}
+            style={{ position: "absolute", right: 0, marginRight: "3px" }}
           >
+            
+            <CBreadcrumbRouter
+          className="border-0 c-subheader-nav m-0 px-0 px-md-3"
+          routes={routes}
+            />
+            
+            
              <CCol
               style={{
                 minWidth: "15rem",
